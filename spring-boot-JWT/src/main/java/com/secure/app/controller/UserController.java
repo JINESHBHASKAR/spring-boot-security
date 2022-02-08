@@ -30,8 +30,13 @@ public class UserController {
 
 	public UserController() {
 	}
+	
+	@GetMapping("/wish")
+	public String getWish() {
+		return "Welcome to Spring Security";
+	}
 
-	@GetMapping(value = "/users")
+	@GetMapping(value = "/user")
 	public ResponseEntity<List<User>> getUsers() {
 		log.info("inside getUsers() in  UserController");
 		return ResponseEntity.ok().body(userService.getUsers());
